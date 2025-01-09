@@ -17,4 +17,20 @@ class Solution {
 
         return l
     }
+
+    fun removeDuplicates(nums: IntArray): Int {
+        val n = nums.size
+        if (n <= 1) return n
+        var j = 0
+
+        for (i in 0 until n - 1) {
+            if (nums[i] != nums[i + 1]) {
+                nums[j++] = nums[i]
+            }
+        }
+
+        nums[j++] = nums[n - 1]
+        
+        return j
+    }
 }
