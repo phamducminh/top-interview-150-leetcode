@@ -14,4 +14,17 @@ class Solution {
 
         return res
     }
+
+    fun majorityElement(nums: IntArray): Int {
+        var count = 0
+        var candidate = 0
+
+        for (i in 0 until nums.size) {
+            if (count == 0) candidate = nums[i]
+            if (nums[i] == candidate) count++
+            else count--
+        }
+
+        return candidate
+    }
 }
