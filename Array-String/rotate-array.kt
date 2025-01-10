@@ -11,4 +11,12 @@ class Solution {
             nums[i] = temp[i]
         }
     }
+
+    fun rotate(nums: IntArray, k: Int): Unit {
+        val n = nums.size
+        val k1 = k % n
+        nums.reverse(0, n - k1)
+        nums.reverse(n - k1, n)
+        nums.reverse(0, n)
+    }
 }
